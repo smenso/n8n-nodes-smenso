@@ -1,0 +1,55 @@
+{
+  "name": "n8n-nodes-smenso",
+  "version": "0.1.0",
+  "description": "n8n community node for smenso – project management and task automation",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n-nodes",
+    "smenso",
+    "project-management",
+    "automation"
+  ],
+  "license": "MIT",
+  "homepage": "https://smenso.de",
+  "author": {
+    "name": "flaetchen GmbH",
+    "email": "hello@flaetchen.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smenso/n8n-nodes-smenso"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier \"nodes/**/*.{ts,js,json,md}\" \"credentials/**/*.{ts,js,json,md}\" --write",
+    "lint": "eslint \"nodes/**/*.{ts,js}\" \"credentials/**/*.{ts,js}\" package.json --max-warnings=0",
+    "lintfix": "eslint \"nodes/**/*.{ts,js}\" \"credentials/**/*.{ts,js}\" package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/SmensoApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Smenso/Smenso.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.0.0",
+    "gulp": "^4.0.0",
+    "n8n-workflow": "*",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}
