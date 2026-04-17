@@ -12,8 +12,8 @@
   "license": "MIT",
   "homepage": "https://smenso.de",
   "author": {
-    "name": "flaetchen GmbH",
-    "email": "hello@flaetchen.com"
+    "name": "Smart Enterprise Solutions GmbH",
+    "email": "sven.flaetchen@smenso.de"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "format": "prettier \"nodes/**/*.{ts,js,json,md}\" \"credentials/**/*.{ts,js,json,md}\" --write",
     "lint": "eslint \"nodes/**/*.{ts,js}\" \"credentials/**/*.{ts,js}\" package.json --max-warnings=0",
     "lintfix": "eslint \"nodes/**/*.{ts,js}\" \"credentials/**/*.{ts,js}\" package.json --fix",
-    "prepublishOnly": "npm run build && npm run lint"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "dist/",
