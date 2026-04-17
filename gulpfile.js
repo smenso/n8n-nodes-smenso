@@ -4,4 +4,8 @@ function buildIcons() {
   return src('nodes/**/*.svg').pipe(dest('dist/nodes'));
 }
 
-exports['build:icons'] = buildIcons;
+function buildCredentialIcons() {
+  return src('credentials/**/*.svg').pipe(dest('dist/credentials'));
+}
+
+exports['build:icons'] = require('gulp').series(buildIcons, buildCredentialIcons);
