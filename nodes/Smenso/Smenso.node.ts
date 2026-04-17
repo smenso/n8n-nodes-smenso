@@ -1,4 +1,5 @@
 import {
+  IDataObject,
   IExecuteFunctions,
   INodeExecutionData,
   INodeType,
@@ -80,13 +81,13 @@ export class Smenso implements INodeType {
         }
 
         const executionData = this.helpers.constructExecutionMetaData(
-          this.helpers.returnJsonArray(responseData as object),
+         this.helpers.returnJsonArray(responseData as IDataObject[]),
           { itemData: { item: i } },
         );
         returnData.push(...executionData);
       } catch (error) {
         if (this.continueOnFail()) {
-          returnData.push({ json: { error: (error as Error).message }, pairedItem: { item: i } });
+         returnData.push({ json: { error: (error as Error).message } as IDataObject, pairedItem: { item: i } });
           continue;
         }
         throw new NodeApiError(this.getNode(), error as object);
