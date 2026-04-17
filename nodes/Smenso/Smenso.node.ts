@@ -4,13 +4,12 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
+	JsonObject,
 	NodeApiError,
 } from 'n8n-workflow';
 
 import { projectFields, projectOperations } from './ProjectDescription';
 import { taskFields, taskOperations } from './TaskDescription';
-
-type JsonObject = { [key: string]: unknown };
 
 export class Smenso implements INodeType {
 	description: INodeTypeDescription = {
@@ -91,7 +90,7 @@ export class Smenso implements INodeType {
 					});
 					continue;
 				}
-				throw new NodeApiError(this.getNode(), error as JsonObject);
+				throw new NodeApiError(this.getNode(), error as unknown as JsonObject);
 			}
 		}
 
