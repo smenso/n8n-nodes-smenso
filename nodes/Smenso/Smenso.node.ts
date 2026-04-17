@@ -87,7 +87,7 @@ export class Smenso implements INodeType {
         returnData.push(...executionData);
       } catch (error) {
         if (this.continueOnFail()) {
-         returnData.push({ json: { error: (error as Error).message } as IDataObject, pairedItem: { item: i } });
+         returnData.push({ json: { error: (error as Error).message } as unknown as IDataObject, pairedItem: { item: i } });
           continue;
         }
         throw new NodeApiError(this.getNode(), error as object);
