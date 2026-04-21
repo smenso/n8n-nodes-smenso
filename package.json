@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-smenso",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "n8n community node for smenso – project management and task automation",
   "keywords": [
     "n8n-community-node-package",
