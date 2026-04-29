@@ -13,7 +13,7 @@ import { taskFields, taskOperations } from './TaskDescription';
 
 export class Smenso implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'smenso',
+		displayName: 'Smenso',
 		name: 'smenso',
 		icon: 'file:smenso.svg',
 		group: ['output'],
