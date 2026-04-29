@@ -7,7 +7,7 @@ import {
 
 export class SmensoApi implements ICredentialType {
   name = 'smensoApi';
-  displayName = 'smenso API';
+  displayName = 'Smenso API';
   documentationUrl = 'https://developers.smenso.de/docs/authentication';
   icon = 'file:smenso.svg' as const;
 
